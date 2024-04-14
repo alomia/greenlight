@@ -59,7 +59,7 @@ func (m PermissionsModel) GetAllForUser(userID int64) (Permissions, error) {
 	return permissions, nil
 }
 
-func (m PermissionsModel) AddForUser(userID int64, codes ...[]string) error {
+func (m PermissionsModel) AddForUser(userID int64, codes ...string) error {
 	query := `
 		INSERT INTO users_permissions
 		SELECT $1, permissions.id FROM permissions WHERE permissions.code = ANY($2)`
