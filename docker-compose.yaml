@@ -1,0 +1,12 @@
+services:
+  db:
+    container_name: greenlight-database
+    image: postgres:15.7-alpine3.19
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=pa55word
+      - POSTGRES_USER=greenlight
+      - POSTGRES_DB=greenlight
+    ports:
+      - "5432:5432"
