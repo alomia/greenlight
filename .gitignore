@@ -1,3 +1,4 @@
-.envrc
+.env
 bin/
 postgresql/
+pgadmin/
